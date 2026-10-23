@@ -1,0 +1,96 @@
+
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+
+# ==============================
+# Virtual environments
+# ==============================
+.venv/
+venv/
+env/
+ENV/
+
+# ==============================
+# Environment variables / secrets
+# ==============================
+.env
+.env.*
+!.env.example
+!.env.template
+
+# ==============================
+# Testing and coverage
+# ==============================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ==============================
+# Type checking and linting
+# ==============================
+.mypy_cache/
+.ruff_cache/
+.pytype/
+
+# ==============================
+# Build and packaging
+# ==============================
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+
+# ==============================
+# IDEs and editors
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Logs and temporary files
+# ==============================
+*.log
+*.tmp
+*.temp
+
+# ==============================
+# Codebase RAG generated data
+# ==============================
+
+# Cloned repositories
+data/cloned_repos/
+data/repositories/
+
+# Generated embeddings and vector indexes
+data/embeddings/
+data/vector_store/
+data/indexes/
+
+# Runtime sessions and temporary workspaces
+data/sessions/
+tmp/
+temp/
+
+# ==============================
+# Local model artifacts
+# ==============================
+models/
+checkpoints/
+
+# ==============================
+# Jupyter
+# ==============================
+.ipynb_checkpoints/
