@@ -104,8 +104,3 @@ class SessionManager:
             if inactive_time > self.timeout:
                 self.cleanup_Session(session_path.name)
             
-
-    
-    
-    
-        
