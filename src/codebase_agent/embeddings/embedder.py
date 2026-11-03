@@ -8,7 +8,6 @@ embedding_model = GoogleGenerativeAIEmbeddings(
     task_type="RETRIEVAL_DOCUMENT",
 )
 
-def generate_embeddings(chunks):
-    texts = [chunk.page_content for chunk in chunks]
+def generate_embeddings(texts):
     
     return embedding_model.embed_documents(texts)
