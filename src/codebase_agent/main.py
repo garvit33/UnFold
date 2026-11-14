@@ -1,6 +1,8 @@
 from langgraph.graph import StateGraph,START,END
 from codebase_agent.ingestion.service import ingest_repository
+from codebase_agent.parsing.parsing_service import parse_repository
 from typing import TypedDict
+from pathlib import Path
 
 #state
 
@@ -38,6 +40,17 @@ def ingest_node(state: WorkflowState):
         "persist_directory": result["storage_root"]
     }
     
+
+def parse_node(state: WorkflowState):
+    
+    chunks = parse_repository(
+        repository_path=Path(state["repository_path"]),
+        filtered_inventory=state["filtered_inventory"]
+    )
+    
+    return{
+        "chunks": chunks
+    }
     
 
 
