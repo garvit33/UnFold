@@ -7,7 +7,7 @@ from codebase_agent.ingestion.filter import filter_inventory
 from codebase_agent.ingestion.language_detector import detect_language
 
 
-def main():
+def ingest_repository(repo_url:str):
     project_root = Path(__file__).resolve().parents[3]
     storage_root = project_root/"src"/"codebase_agent"/"temp_storage"
     
@@ -18,7 +18,7 @@ def main():
     session_path = storage_root/session_id
     repository_path = session_path/"repository"
     
-    repo_url = "https://github.com/octocat/Hello-World.git"
+    
     
     try:
         #1 clone repository
@@ -52,13 +52,17 @@ def main():
             encoding="utf-8",
         )
             
-        print("inventory saved to",inventory_path)
+        return{
+            "session_id": session_id,
+            "repository_path": str(cloned_path),
+            "filtered_inventory": filtered_files,
+            "storage_root": str(session_path)
+        }
         
 
     except (RuntimeError, FileNotFoundError) as error:
         session_manager.cleanup_session(session_id)
         print("Repository setup failed:", error)
 
-if __name__ == "__main__":
-    main()
+
                                                 
